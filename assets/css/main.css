@@ -1,0 +1,159 @@
+@font-face {
+	font-family: 'italian-revolution';
+	src: url('/assets/fonts/italian_revolution.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@import url(http://fonts.googleapis.com/css?family=Droid+Sans:400,700);
+
+body {
+	font-size: 14px;
+	line-height: 1.8em;
+	color: #303030;
+	font-family: 'Droid Sans', 'serif';
+}
+
+a {
+	text-decoration: none;
+	color: rgb(92, 0, 255);
+}
+
+.container {
+	max-width: 775px;
+	margin: 0 auto;
+}
+
+.header {
+	text-align: center;
+	border-bottom: 0.3em solid rgb(228, 228, 228);
+	padding-top: 1.8em;
+	padding-bottom: 0.1em;
+	margin-bottom: 1.8em;
+}
+
+.header .siteTitle {
+	font-family: 'italian-revolution';
+	font-size: 80px;
+	margin-bottom: 0.4em;
+
+}
+
+.header nav {
+	font-weight: 700;
+	font-size: 18px;
+	margin-top: 0.8em;
+	margin-bottom: 0.8em;
+}
+
+.header .dot {
+	font-weight: bold;
+	margin-left: 0.25em;
+}
+
+.container {
+	text-align: center;
+}
+.container input {
+	border-radius: 6px;
+	border: 1px solid #ccc;
+	box-shadow: inset 0 1px 3px #ddd;
+	width: 50%;
+
+}
+
+.container button {
+	background-color: transparent;
+	border-color: rgb(92, 0, 255);
+	border-radius: 8px;
+	color: rgb(92, 0, 255);
+	margin-left: 8px;
+}
+
+.container button, .container input {
+	padding: 6px;
+	line-height: 1.4em;
+	font-size: 16px;
+}
+
+.content .searchRow {
+	margin: 1.2em;
+}
+.content .mapArea {
+	text-align: center;
+	width: 100%;
+	margin: 0 auto;
+}
+#map-canvas {
+	height: 50%;
+	width: 55%;
+	position: absolute;
+}
+
+#results {
+	text-align: left;
+}
+
+.result {
+	border: 1px solid #ccc;
+	border-radius: 8px;
+	min-width:25%;
+	padding-bottom: 2px;
+	display: inline-block;
+	margin: 5px;
+}
+
+.result:hover {
+	background-color: rgb(247, 242, 255);
+
+	-webkit-transition:background-color .3s ease-in;
+       -moz-transition:background-color .3s ease-in;
+         -o-transition:background-color .3s ease-in;
+    	    transition:background-color .3s ease-in;
+}
+.result.hover {
+	background-color: rgb(247, 242, 255);
+
+	-webkit-transition:background-color .3s ease-in;
+       -moz-transition:background-color .3s ease-in;
+         -o-transition:background-color .3s ease-in;
+    	    transition:background-color .3s ease-in;
+}
+.result h3 {
+	text-align: center;
+	padding-bottom: 2px;
+	margin-top: 2px;
+	margin-bottom: 0px;
+	border-bottom: 1px solid #868686;
+}
+
+.result-contents {
+	text-align: left;
+}
+
+.result-names, .result-values {
+	display: inline-block;
+	margin: 0px;
+	overflow: hidden;
+}
+
+.result-names {
+	border-right: 1px solid #ccc;
+	width: 45%;
+	text-align: left;
+	margin-left: 10px;
+}
+.result-values {
+	text-align: center;
+	margin-left: 1.3em;
+}
+.footer {
+	text-align: center;
+	padding-top: 55px;
+	padding-bottom: 44px;
+	max-width: 500px;
+	margin: 0 auto;
+}
+
+.footer, .lighttext { color: #777; }
+.footer a { color: #aaa; text-decoration: underline; }

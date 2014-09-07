@@ -1,0 +1,15 @@
+application: graphic-segment-685 
+version: 3
+runtime: go
+api_version: go1
+
+handlers:
+- url: /favicon\.ico
+  static_files: favicon.ico
+  upload: favicon\.ico
+
+- url: /assets
+  static_dir: assets
+
+- url: /.*
+  script: _go_app

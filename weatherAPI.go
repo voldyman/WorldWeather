@@ -9,7 +9,7 @@ import (
 	"appengine/urlfetch"
 )
 
-type WeatherAPIResponse struct {
+type weatherAPIResponse struct {
 	Name string `json: name`
 	Main struct {
 		Temp     float64 `json: "temp"`
@@ -36,7 +36,9 @@ type WeatherResult struct {
 	}
 }
 
-func fetchWeatherData(ctx appengine.Context, name string) (ret []byte, err error) {
+//Fetches data from openweathermap and returns the result as a json byte array
+//requres a appengine.Context to use urlfetch
+func FetchWeatherData(ctx appengine.Context, name string) (ret []byte, err error) {
 	client := urlfetch.Client(ctx)
 	resp, err := client.Get("http://api.openweathermap.org/data/2.5/weather?q=" + name)
 	if err != nil {
@@ -50,7 +52,7 @@ func fetchWeatherData(ctx appengine.Context, name string) (ret []byte, err error
 		return
 	}
 
-	var apiResponse WeatherAPIResponse
+	var apiResponse weatherAPIResponse
 	json.Unmarshal(data, &apiResponse)
 
 	webResponse := &WeatherResult{

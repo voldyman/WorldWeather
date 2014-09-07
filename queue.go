@@ -5,23 +5,28 @@ import (
 	"sync"
 )
 
+//something something template support
+//just cast this to any kind of data you want to put in the Stack
 type Item interface{}
 
-type Queue struct {
+//A minimal Stack implemented using map
+type Stack struct {
 	syncLock *sync.Mutex
 	elements map[int]Item
 	current  int
 }
 
-func NewQueue() *Queue {
-	return &Queue{
+func NewStack() *Stack {
+	return &Stack{
 		syncLock: &sync.Mutex{},
 		elements: make(map[int]Item),
 		current:  -1,
 	}
 }
 
-func (self *Queue) Push(item Item) int {
+//Add Item to Stack and return the current index
+//of the item
+func (self *Stack) Push(item Item) int {
 	self.syncLock.Lock()
 
 	self.current = self.current + 1
@@ -32,10 +37,11 @@ func (self *Queue) Push(item Item) int {
 	return self.current
 }
 
-func (self *Queue) Pop() (item Item, err error) {
+//Pop an item from the stack
+func (self *Stack) Pop() (item Item, err error) {
 	self.syncLock.Lock()
 	if self.current < 0 {
-		err = errors.New("Queue empty")
+		err = errors.New("Stack empty")
 	}
 
 	item = self.elements[self.current]
